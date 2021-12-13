@@ -1,0 +1,75 @@
+<h2>人员登记表</h2>
+<div class="person_list">
+  <ul>
+    <!-- 输入框(text),表单双向数据绑定 -->
+    <li>
+      姓名：
+      <input
+        type="text"
+        [(ngModel)]="personInfo.username"
+        class="user_input"
+        placeholder="姓名"
+      />
+    </li>
+
+    <!-- 单选按钮（radio），双向数据绑定 -->
+    <li>
+      性别：
+      <input
+        type="radio"
+        value="1"
+        name="sex"
+        id="sex1"
+        [(ngModel)]="personInfo.sex"
+      />
+      <label for="sex1">男</label>&nbsp;&nbsp;
+
+      <input
+        type="radio"
+        value="2"
+        name="sex"
+        id="sex2"
+        [(ngModel)]="personInfo.sex"
+      />
+      <label for="sex2">女</label>
+    </li>
+
+    <!-- 选择列表（select） 双向数据绑定 -->
+    <li>
+      城市：<select name="city" id="city" [(ngModel)]="personInfo.city">
+        <option [value]="item" *ngFor="let item of personInfo.cityList">
+          {{ item }}
+        </option>
+      </select>
+    </li>
+
+    <!-- 多选按钮(checkbox) 双向数据绑定 -->
+    <li>
+      爱好：<span *ngFor="let item of personInfo.interest; let key = index">
+        <input
+          type="checkbox"
+          [id]="'check' + key"
+          [(ngModel)]="item.checked"
+        />
+        <label for="'check'+key">{{ item.name }}</label
+        >&nbsp;&nbsp;
+      </span>
+    </li>
+
+    <!-- 文本域（textarea） 双向数据绑定 -->
+    <li>
+      备注：<textarea
+        name="mark"
+        id="mark"
+        cols="32"
+        rows="5"
+        [(ngModel)]="personInfo.mark"
+      ></textarea>
+    </li>
+
+    <li class="center1">
+      <!-- 单击登记按钮， 触发doSubmit事件，打印登记的数据 -->
+      <button (click)="doSubmit()">登记</button>
+    </li>
+  </ul>
+</div>

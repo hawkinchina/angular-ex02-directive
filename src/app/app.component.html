@@ -1,0 +1,89 @@
+<hello name="{{ name }}"></hello>
+<p>Start editing to see some magic happen :)</p>
+
+<hr />
+<!-- 测试attribute绑定 -->
+<!-- 表达式计算colspan = 2 -->
+<table border="1">
+  <tr>
+    <td colspan="2">高三一班</td>
+  </tr>
+
+  <tr>
+    <td>姓名</td>
+    <td>成绩</td>
+  </tr>
+</table>
+<hr />
+<!-- 表达式计算colspan = 2 -->
+<table border="1">
+  <tr>
+    <td [attr.colspan]="1 + 1">高三一班</td>
+  </tr>
+
+  <tr>
+    <td>姓名</td>
+    <td>成绩</td>
+  </tr>
+</table>
+
+<hr />
+<div class="class1 redcolor border2">设置多个类的css</div>
+
+<hr />
+
+<div class="class1 redcolor border2" [class]="cover">设置多个类的css</div>
+
+<!-- 根据组件中的属性：is_redcolor = true/false 来设置html元素，类 redcolor是生效 -->
+<div [class.redcolor]="is_redcolor">is RedColor</div>
+
+<!-- 绑定类的优先级较高，胜过class -->
+<div class="border2" [class.border2]="has_border">has border ...</div>
+
+<hr />
+<!-- 测试双向绑定 -->
+<div>Hello {{ user.name }}</div>
+<input [(ngModel)]="user.name" /> {{ user.name }}
+
+<hr />
+<!-- 测试事件绑定 -->
+<button (click)="onSave()">Save</button>
+
+<br />
+<button on-click="change()" [style.color]="is_change ? 'red' : 'green'">
+  on-click Save
+</button>
+
+<hr />
+<!-- 测试： 引入 app-form -->
+<app-form></app-form>
+
+<hr />
+<!-- 测试 父组件home 给 子组件header 传值。。 -->
+<app-home></app-home>
+
+<!-- 测试ngSwith/ ngClassIf / ngClass -->
+<div [ngStyle]="{ color: 'red', 'font-weight': 'bold' }">
+  <div *ngIf="myVar == 'A'">变量等于A</div>
+  <div *ngIf="myVar == 'B'">变量等于B</div>
+  <div *ngIf="myVar != 'A' && myVar != 'B'">变量是其他的值。。。。</div>
+</div>
+
+<div
+  [ngSwitch]="myVar"
+  style="background-color: yellow"
+  [ngClass]="['border2', 'redcolor']"
+>
+  <div *ngSwitchCase="'A'">变量等于A</div>
+  <div *ngSwitchCase="'B'">变量等于B</div>
+  <div *ngSwitchDefault>变量是其他的值。。。。</div>
+</div>
+
+<hr />
+<!-- 测试ngFor -->
+
+<ul>
+  <li *ngFor="let item of cities; let indexValue = index">
+    {{ indexValue }} - {{ item }}
+  </li>
+</ul>

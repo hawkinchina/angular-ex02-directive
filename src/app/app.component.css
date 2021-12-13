@@ -1,0 +1,35 @@
+p {
+  font-family: Lato;
+}
+
+.class1 {
+  background-color: blue;
+}
+
+.whitecolor {
+  color: azure;
+}
+
+.redcolor {
+  color: red;
+}
+
+.yellowcolor {
+  color: yellow;
+}
+
+.class2 {
+  background-color: #a52a2a;
+}
+
+.class3 {
+  background-color: yellow;
+}
+
+.border1 {
+  border: 2px #a52a2a solid;
+}
+
+.border2 {
+  border: 4px black dashed;
+}

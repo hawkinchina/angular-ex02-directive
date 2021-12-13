@@ -1,0 +1,20 @@
+<!-- 
+给子组件： 传递属性title， 传递方法get，传递整个组件this
+ -->
+
+<app-header
+  #my_header
+  [receiveTitle]="title"
+  [getF]="get"
+  [home]="this"
+></app-header>
+<hr />
+<p>home works! 我是 home组件</p>
+
+<!-- 
+ 父组件，主动获取子组件的message和方法
+ -->
+<button (click)="getChildMessage()">获取子组件的messge</button>
+<br />
+<br />
+<button (click)="getChildFun()">执行子组件的方法</button>
