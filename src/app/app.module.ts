@@ -7,6 +7,7 @@ import { HelloComponent } from './hello.component';
 import { FormComponent } from './form/form.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
+import { HighlightDirective } from './directives/highlight.directive';
 
 @NgModule({
   imports: [BrowserModule, FormsModule],
@@ -16,6 +17,7 @@ import { HeaderComponent } from './header/header.component';
     FormComponent,
     HomeComponent,
     HeaderComponent,
+    HighlightDirective,
   ],
   bootstrap: [AppComponent],
 })
