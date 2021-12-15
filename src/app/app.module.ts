@@ -8,6 +8,7 @@ import { FormComponent } from './form/form.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { HighlightDirective } from './directives/highlight.directive';
+import { HidenodeDirective } from './directives/hidenode.directive';
 
 @NgModule({
   imports: [BrowserModule, FormsModule],
@@ -18,6 +19,7 @@ import { HighlightDirective } from './directives/highlight.directive';
     HomeComponent,
     HeaderComponent,
     HighlightDirective,
+    HidenodeDirective,
   ],
   bootstrap: [AppComponent],
 })
